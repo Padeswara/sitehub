@@ -12,10 +12,10 @@ export function Navbar({
           
           {/* Brand Wordmark: SiteHub (Dual Font, No Logo Image) */}
           <div className="flex items-baseline min-w-0 select-none">
-            <span className="font-brand-site font-bold text-slate-900 dark:text-white tracking-tight text-xl sm:text-2xl leading-none">
+            <span className="font-brand-site font-bold text-slate-900 dark:text-white tracking-tight text-[22px] sm:text-2xl leading-none">
               Site
             </span>
-            <span className="font-brand-hub font-bold italic text-blue-600 dark:text-blue-400 text-xl sm:text-2xl leading-none ml-0.5">
+            <span className="font-brand-hub font-bold italic text-blue-600 dark:text-blue-400 text-[22px] sm:text-2xl leading-none ml-0.5">
               Hub
             </span>
           </div>

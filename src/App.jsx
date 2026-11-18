@@ -138,20 +138,20 @@ export function App() {
                 <Layers className="w-5 h-5 text-current opacity-100" />
               </div>
               <div className="min-w-0">
-                <div className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <div className="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
                   <span>Total Sites</span>
                   {statusFilter === 'ALL' && (
-                    <span className="text-[9px] px-1.5 py-0.5 rounded-md bg-slate-900/10 dark:bg-white/15 text-slate-700 dark:text-slate-200 font-semibold lowercase">
+                    <span className="text-xs px-2 py-0.5 rounded-md bg-slate-900/10 dark:bg-white/15 text-slate-700 dark:text-slate-200 font-semibold lowercase">
                       showing all
                     </span>
                   )}
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 truncate hidden xs:block sm:block">
+                <div className="text-sm text-slate-500 dark:text-slate-400 truncate hidden xs:block sm:block">
                   Total registered site locations
                 </div>
               </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white shrink-0 pr-1">
+            <div className="text-[22px] sm:text-2xl font-black text-slate-900 dark:text-white shrink-0 pr-1">
               {stats.total}
             </div>
           </div>
@@ -177,10 +177,10 @@ export function App() {
                 <Clock className="w-4 h-4 text-current opacity-100" />
               </div>
               <div className="min-w-0">
-                <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
                   On Going
                 </div>
-                <div className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
                   {stats.onGoing}
                 </div>
               </div>
@@ -204,10 +204,10 @@ export function App() {
                 <Clock className="w-4 h-4 text-current opacity-100" />
               </div>
               <div className="min-w-0">
-                <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
                   Pending
                 </div>
-                <div className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
                   {stats.pending}
                 </div>
               </div>
@@ -231,10 +231,10 @@ export function App() {
                 <CheckCircle className="w-4 h-4 text-current opacity-100" />
               </div>
               <div className="min-w-0">
-                <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
                   Approve
                 </div>
-                <div className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
                   {stats.approve}
                 </div>
               </div>
@@ -258,10 +258,10 @@ export function App() {
                 <XCircle className="w-4 h-4 text-current opacity-100" />
               </div>
               <div className="min-w-0">
-                <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
                   Decline
                 </div>
-                <div className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
                   {stats.decline}
                 </div>
               </div>
@@ -307,7 +307,7 @@ export function App() {
       </main>
 
       {/* Sticky Bottom Footer */}
-      <footer className="mt-auto w-full py-5 border-t border-slate-200/80 dark:border-white/10 text-center text-xs text-slate-500 dark:text-slate-400 bg-white/40 dark:bg-slate-950/40 backdrop-blur-xl">
+      <footer className="mt-auto w-full py-5 border-t border-slate-200/80 dark:border-white/10 text-center text-sm text-slate-500 dark:text-slate-400 bg-white/40 dark:bg-slate-950/40 backdrop-blur-xl">
         © 2026 Rittergeistworks by Padeswaraa. All rights reserved.
       </footer>
 

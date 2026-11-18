@@ -47,8 +47,8 @@ export function StatusDropdown({
   const updatePosition = () => {
     if (!buttonRef.current) return
     const rect = buttonRef.current.getBoundingClientRect()
-    const menuWidth = 144 // 9rem = 144px
-    const menuHeight = 165 // estimated height
+    const menuWidth = 156 // 9.75rem
+    const menuHeight = 180 // estimated height
     const spaceBelow = window.innerHeight - rect.bottom
     const spaceAbove = rect.top
     const openUp = spaceBelow < menuHeight && spaceAbove > spaceBelow
@@ -144,13 +144,13 @@ export function StatusDropdown({
             ? 'bg-white text-slate-800 border-slate-200/90 hover:bg-slate-50 shadow-sm'
             : config.badge
         } ${
-          size === 'sm' ? 'px-2.5 py-1 text-[11px]' : 'px-3 py-1.5 text-xs'
+          size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-3 py-1.5 text-sm'
         } ${disabled ? 'opacity-60 cursor-not-allowed' : ''}`}
         title="Click to change status"
       >
         <span className={`w-2 h-2 rounded-full shrink-0 ${config.dot}`}></span>
         <span>{currentStatus}</span>
-        <ChevronDown className={`w-3 h-3 transition-transform duration-200 text-current opacity-100 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 text-current opacity-100 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {/* Floating Menu via React Portal */}
@@ -165,7 +165,7 @@ export function StatusDropdown({
           } rounded-2xl p-1.5 animate-in fade-in zoom-in-95 duration-150 select-none`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2 py-1">
+          <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-2 py-1">
             Change Status
           </div>
           <div className="space-y-0.5 mt-0.5">
@@ -178,7 +178,7 @@ export function StatusDropdown({
                   key={status}
                   type="button"
                   onClick={() => handleSelect(status)}
-                  className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-colors cursor-pointer ${
+                  className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-xl text-sm font-semibold transition-colors cursor-pointer ${
                     isSelected
                       ? 'bg-slate-900 text-white font-bold shadow-xs'
                       : bgWhite
@@ -190,7 +190,7 @@ export function StatusDropdown({
                     <span className={`w-2 h-2 rounded-full ${itemConfig.dot}`}></span>
                     <span>{status}</span>
                   </span>
-                  {isSelected && <Check className="w-3.5 h-3.5 text-white shrink-0" />}
+                  {isSelected && <Check className="w-4 h-4 text-white shrink-0" />}
                 </button>
               )
             })}
