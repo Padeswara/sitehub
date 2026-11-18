@@ -38,6 +38,14 @@ html.dark body {
   flex-direction: column;
 }
 
+/* Dual-font Wordmark Typography (SiteHub) */
+.font-brand-site {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+.font-brand-hub {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
 /* ==========================================================================
    Dual Glass Effect Utilities (Light Frosted Glass & Dark Frosted Glass)
    ========================================================================== */

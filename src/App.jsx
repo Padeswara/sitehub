@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { LoginPage } from './components/LoginPage'
 import { Navbar } from './components/Navbar'
 import { TableView } from './components/views/TableView'
 import { CardView } from './components/views/CardView'
@@ -7,7 +6,6 @@ import { SiteModal } from './components/SiteModal'
 import { ImagePreviewModal } from './components/ImagePreviewModal'
 import { DeleteConfirmModal } from './components/DeleteConfirmModal'
 import { useSites } from './hooks/useSites'
-import { useIdleTimer } from './hooks/useIdleTimer'
 import { useTheme } from './hooks/useTheme'
 import { 
   Clock, 
@@ -20,49 +18,10 @@ export function App() {
   // Theme Manager (Dark / Light Mode)
   const { theme, toggleTheme } = useTheme()
 
-  // 1. Simple Authentication
-  const [currentUser, setCurrentUser] = useState(() => {
-    try {
-      const session = localStorage.getItem('kdbase_auth_session')
-      return session ? JSON.parse(session).username : null
-    } catch {
-      return null
-    }
-  })
-  const [idleNotice, setIdleNotice] = useState('')
-
-  const handleLoginSuccess = (username) => {
-    setIdleNotice('')
-    setCurrentUser(username)
-  }
-
-  const handleLogout = () => {
-    setIdleNotice('')
-    localStorage.removeItem('kdbase_auth_session')
-    localStorage.removeItem('kdbase_last_activity')
-    setCurrentUser(null)
-  }
-
-  // Auto-logout after 10 minutes of AFK / inactivity
-  const handleIdleTimeout = () => {
-    localStorage.removeItem('kdbase_auth_session')
-    localStorage.removeItem('kdbase_last_activity')
-    setCurrentUser(null)
-    setIdleNotice('Your session has automatically expired due to 10 minutes of inactivity for account security.')
-  }
-
-  useIdleTimer({
-    onIdle: handleIdleTimeout,
-    enabled: Boolean(currentUser)
-  })
-
-  // 2. Data Hook
+  // Data Hook (Local Storage)
   const {
     sites,
     loading,
-    error,
-    isSupabaseMode,
-    isDbOnline,
     fetchSites,
     addSite,
     updateSite,
@@ -70,11 +29,11 @@ export function App() {
     deleteSite
   } = useSites()
 
-  // 3. Views & Status Filter State (Lifted to App for top card synchronization)
+  // Views & Status Filter State (Lifted to App for top card synchronization)
   const [currentView, setCurrentView] = useState('card')
   const [statusFilter, setStatusFilter] = useState('ALL')
 
-  // 4. Modal States
+  // Modal States
   const [isSiteModalOpen, setIsSiteModalOpen] = useState(false)
   const [editingSite, setEditingSite] = useState(null)
   const [previewImage, setPreviewImage] = useState({ isOpen: false, url: '', title: '' })
@@ -138,29 +97,11 @@ export function App() {
     }
   }
 
-  // If not logged in, render LoginPage
-  if (!currentUser) {
-    return (
-      <LoginPage 
-        onLoginSuccess={handleLoginSuccess} 
-        idleNotice={idleNotice} 
-        theme={theme} 
-        onToggleTheme={toggleTheme} 
-      />
-    )
-  }
-
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100">
       
       {/* Responsive Navbar */}
       <Navbar
-        currentUser={currentUser}
-        onLogout={handleLogout}
-        isDbOnline={isDbOnline}
-        isDbLoading={loading}
-        onRetryDb={fetchSites}
-        dbError={error}
         theme={theme}
         onToggleTheme={toggleTheme}
       />
