@@ -15,7 +15,7 @@ export function ImagePreviewModal({ isOpen, imageUrl, title, onClose }) {
       >
         {/* Header Bar */}
         <div className="flex items-center justify-between px-5 py-3.5 bg-white/10 backdrop-blur-xl border-b border-white/10 text-white">
-          <div className="font-bold text-xs sm:text-sm truncate pr-4 text-slate-100">
+          <div className="font-bold text-sm sm:text-base truncate pr-4 text-slate-100">
             {title || 'Site Documentation'}
           </div>
           <div className="flex items-center gap-1.5 shrink-0">

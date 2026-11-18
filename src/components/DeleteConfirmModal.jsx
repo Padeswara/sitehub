@@ -27,11 +27,11 @@ export function DeleteConfirmModal({ isOpen, siteName, onConfirm, onCancel, isDe
           <AlertTriangle className="w-7 h-7" />
         </div>
 
-        <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white m-0 tracking-tight">
+        <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white m-0 tracking-tight">
           Delete Site Data?
         </h3>
 
-        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 mb-6 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 mb-6 leading-relaxed">
           Are you sure you want to delete data for <span className="font-bold text-slate-900 dark:text-white">"{siteName}"</span>? This action cannot be undone.
         </p>
 
@@ -41,7 +41,7 @@ export function DeleteConfirmModal({ isOpen, siteName, onConfirm, onCancel, isDe
             type="button"
             onClick={onCancel}
             disabled={isDeleting}
-            className="w-full py-2.5 px-4 glass-btn-secondary text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white font-bold text-xs rounded-xl cursor-pointer disabled:opacity-50 active:scale-98"
+            className="w-full py-2.5 px-4 glass-btn-secondary text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white font-bold text-sm rounded-xl cursor-pointer disabled:opacity-50 active:scale-98"
           >
             Cancel
           </button>
@@ -49,13 +49,13 @@ export function DeleteConfirmModal({ isOpen, siteName, onConfirm, onCancel, isDe
             type="button"
             onClick={onConfirm}
             disabled={isDeleting}
-            className="w-full py-2.5 px-4 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-rose-600/30 transition duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-1.5 active:scale-98"
+            className="w-full py-2.5 px-4 bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm rounded-xl shadow-lg shadow-rose-600/30 transition duration-200 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-1.5 active:scale-98"
           >
             {isDeleting ? (
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             ) : (
               <>
-                <Trash2 className="w-3.5 h-3.5" />
+                <Trash2 className="w-4 h-4" />
                 <span>Yes, Delete</span>
               </>
             )}

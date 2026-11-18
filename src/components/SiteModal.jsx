@@ -121,10 +121,10 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
               <Building2 className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-base sm:text-lg font-black text-slate-900 dark:text-white m-0 leading-tight tracking-tight">
+              <h2 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white m-0 leading-tight tracking-tight">
                 {editingSite ? 'Edit Site Data' : 'Add New Site'}
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400 m-0 mt-0.5">
+              <p className="text-sm text-slate-500 dark:text-slate-400 m-0 mt-0.5">
                 {editingSite ? 'Update location details' : 'Fill in site information and upload photo documentation'}
               </p>
             </div>
@@ -141,14 +141,14 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
         {/* Form Body */}
         <form onSubmit={handleSubmit} className="p-5 sm:p-6 space-y-4 max-h-[80vh] overflow-y-auto">
           {errorMsg && (
-            <div className="p-3 bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-bold rounded-xl animate-in fade-in backdrop-blur-sm">
+            <div className="p-3 bg-rose-500/15 border border-rose-500/30 text-rose-300 text-sm font-bold rounded-xl animate-in fade-in backdrop-blur-sm">
               {errorMsg}
             </div>
           )}
 
           {/* Photo Upload */}
           <div>
-            <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
               Photo Documentation
             </label>
             <div className="border-2 border-dashed border-slate-300 dark:border-white/15 hover:border-slate-400 dark:hover:border-white/30 bg-slate-50/60 dark:bg-white/[0.03] hover:bg-slate-100/80 dark:hover:bg-white/[0.06] backdrop-blur-sm rounded-2xl p-3 sm:p-4 transition text-center shadow-2xs">
@@ -173,10 +173,10 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
                   <div className="w-10 h-10 rounded-2xl bg-white dark:bg-white/10 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-200 mb-1.5 shadow-xs">
                     <Upload className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-bold text-slate-900 dark:text-white hover:underline">
+                  <span className="text-sm font-bold text-slate-900 dark:text-white hover:underline">
                     Choose Photo File
                   </span>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                     JPG, PNG, or WEBP (Max 5MB)
                   </span>
                   <input
@@ -193,36 +193,36 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
           <div className="space-y-3">
             {/* Company Name */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Company Name <span className="text-rose-500 dark:text-rose-400">*</span>
               </label>
               <div className="relative">
-                <Building2 className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3" />
+                <Building2 className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3.5" />
                 <input
                   type="text"
                   required
                   value={formData.company_name}
                   onChange={(e) => setFormData({ ...formData, company_name: e.target.value })}
                   placeholder="e.g. Acme Technologies"
-                  className="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm rounded-xl glass-input focus:outline-none"
+                  className="w-full pl-10 pr-3.5 py-2.5 text-sm sm:text-base rounded-xl glass-input focus:outline-none"
                 />
               </div>
             </div>
 
             {/* Address */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Full Address <span className="text-rose-500 dark:text-rose-400">*</span>
               </label>
               <div className="relative">
-                <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3" />
+                <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3.5" />
                 <input
                   type="text"
                   required
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   placeholder="e.g. 123 Main Street, Suite 400"
-                  className="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm rounded-xl glass-input focus:outline-none"
+                  className="w-full pl-10 pr-3.5 py-2.5 text-sm sm:text-base rounded-xl glass-input focus:outline-none"
                 />
               </div>
             </div>
@@ -230,35 +230,35 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
             {/* PIC & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                   PIC Name <span className="text-rose-500 dark:text-rose-400">*</span>
                 </label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3" />
+                  <User className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3.5" />
                   <input
                     type="text"
                     required
                     value={formData.pic_name}
                     onChange={(e) => setFormData({ ...formData, pic_name: e.target.value })}
                     placeholder="e.g. John Doe"
-                    className="w-full pl-10 pr-3 py-2.5 text-xs sm:text-sm rounded-xl glass-input focus:outline-none"
+                    className="w-full pl-10 pr-3 py-2.5 text-sm sm:text-base rounded-xl glass-input focus:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                   PIC WhatsApp Number <span className="text-rose-500 dark:text-rose-400">*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3" />
+                  <Phone className="w-4 h-4 text-slate-700 dark:text-slate-300 opacity-100 absolute left-3.5 top-3.5" />
                   <input
                     type="tel"
                     required
                     value={formData.pic_phone}
                     onChange={(e) => setFormData({ ...formData, pic_phone: e.target.value })}
                     placeholder="e.g. 08123456789"
-                    className="w-full pl-10 pr-3 py-2.5 text-xs sm:text-sm rounded-xl glass-input focus:outline-none"
+                    className="w-full pl-10 pr-3 py-2.5 text-sm sm:text-base rounded-xl glass-input focus:outline-none"
                   />
                 </div>
               </div>
@@ -266,7 +266,7 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
 
             {/* Status Selection */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
                 Site Status
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -277,7 +277,7 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
                       key={opt.value}
                       type="button"
                       onClick={() => setFormData({ ...formData, status: opt.value })}
-                      className={`py-2 px-2.5 rounded-xl border text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                      className={`py-2 px-2.5 rounded-xl border text-sm font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
                         isSelected
                           ? `${opt.color} shadow-xs ring-2 scale-[1.02] backdrop-blur-sm`
                           : 'border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.05] backdrop-blur-sm text-slate-700 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white'
@@ -297,7 +297,7 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
 
             {/* Additional Notes */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Additional Notes
               </label>
               <textarea
@@ -305,7 +305,7 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="Progress notes, obstacles, or specifications..."
-                className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl glass-input focus:outline-none resize-none"
+                className="w-full px-3.5 py-2.5 text-sm sm:text-base rounded-xl glass-input focus:outline-none resize-none"
               />
             </div>
           </div>
@@ -315,14 +315,14 @@ export function SiteModal({ isOpen, onClose, onSave, editingSite = null }) {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2.5 text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white glass-btn-secondary rounded-xl cursor-pointer"
+              className="px-4 py-2.5 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white glass-btn-secondary rounded-xl cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-5 py-2.5 bg-slate-900 hover:bg-black text-white dark:bg-white dark:hover:bg-slate-200 dark:text-slate-950 font-bold text-xs rounded-xl shadow-md shadow-slate-900/15 dark:shadow-white/10 transition duration-200 cursor-pointer disabled:opacity-50 flex items-center gap-1.5 active:scale-98"
+              className="px-5 py-2.5 bg-slate-900 hover:bg-black text-white dark:bg-white dark:hover:bg-slate-200 dark:text-slate-950 font-bold text-sm rounded-xl shadow-md shadow-slate-900/15 dark:shadow-white/10 transition duration-200 cursor-pointer disabled:opacity-50 flex items-center gap-1.5 active:scale-98"
             >
               {isSubmitting ? (
                 <>
